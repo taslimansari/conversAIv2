@@ -18,6 +18,8 @@ app.use(cors({
     credentials: true,
 }))
 
+console.log("Cors enabled for : ", process.env.CLIENT_URL)
+
 app.use(express.json())
 
 const connect = async () => {
