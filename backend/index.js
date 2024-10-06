@@ -41,10 +41,12 @@ app.get("/api/upload", (req, res) => {
     return
 })
 
+// ClerkExpressRequireAuth(), 
 
-app.post("/api/chats", ClerkExpressRequireAuth(), async (req, res) => {
-    const userId = req.auth.userId;
-    const { text } = req.body;
+app.post("/api/chats", async (req, res) => {
+        // const userId = req.auth.userId;
+        const userId = "user_2mQWxEulrcNjoEvIq5qUbjuOu6N";
+        const { text } = req.body;
 
     try {
         // CREATE A NEW CHAT
@@ -92,9 +94,10 @@ app.post("/api/chats", ClerkExpressRequireAuth(), async (req, res) => {
     }
 });
 
-
-app.get("/api/userchats", ClerkExpressRequireAuth(),  async (req, res) => {
-    const userId = req.auth.userId;
+// ClerkExpressRequireAuth(), 
+app.get("/api/userchats", async (req, res) => {
+    // const userId = req.auth.userId;
+    const userId = "user_2mQWxEulrcNjoEvIq5qUbjuOu6N";
     try {
         const userChats = await UserChats.find({ userId })
         let chats = [];
@@ -109,9 +112,10 @@ app.get("/api/userchats", ClerkExpressRequireAuth(),  async (req, res) => {
     return
 })
 
-app.get("/api/chats/:id", ClerkExpressRequireAuth(), async (req, res) => {
-    const userId = req.auth.userId;
-
+// ClerkExpressRequireAuth(), 
+app.get("/api/chats/:id", async (req, res) => {
+        // const userId = req.auth.userId;
+        const userId = "user_2mQWxEulrcNjoEvIq5qUbjuOu6N";
     try {
         
         if (req.params.id !== "dashboard") {
@@ -134,9 +138,10 @@ app.get("/api/chats/:id", ClerkExpressRequireAuth(), async (req, res) => {
     return
 });
 
-app.put("/api/chats/:id", ClerkExpressRequireAuth(), async (req, res) => {
-    const userId = req.auth.userId;
-
+// ClerkExpressRequireAuth(),
+app.put("/api/chats/:id",  async (req, res) => {
+       // const userId = req.auth.userId;
+       const userId = "user_2mQWxEulrcNjoEvIq5qUbjuOu6N";
     const { question, answer, img } = req.body;
 
     const newItems = [
